@@ -1,0 +1,9 @@
+<div class="jumbotron" *ngIf="user">
+  <h2>{{user.name}} <small>{{user.username}}</small></h2>
+  <input class="form-control" [(ngModel)]="user.name">
+</div>
+
+
+<div class="jumbotron" *ngIf="!user">
+  <i class="fa fa-times-rectangle-o"></i><span> No Selected User</span>
+</div>
