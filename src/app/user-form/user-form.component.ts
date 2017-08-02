@@ -1,5 +1,6 @@
 import {Component, OnInit, Output, EventEmitter} from '@angular/core';
 import {User} from "../models/User";
+import {getRandomString} from "selenium-webdriver/safari";
 
 @Component({
   selector: 'app-user-form',
@@ -15,6 +16,7 @@ export class UserFormComponent implements OnInit {
   }
 
   onSubmit() {
+    this.newUSer.id = Math.floor((Math.random() * 1000000) + 1);
     this.userCreated.emit({user: this.newUSer});
     this.newUSer = new User();
     this.active = false;
